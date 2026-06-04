@@ -60,7 +60,7 @@ No build tools or installs needed. This is a plain HTML/CSS project.
 
 ---
 
-## Aurthur
+## Author
 
 - OSMAN ADU DARAMY
 - 905005136
