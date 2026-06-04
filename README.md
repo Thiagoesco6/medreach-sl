@@ -49,14 +49,6 @@ No build tools or installs needed. This is a plain HTML/CSS project.
 - **Icons:** Tabler Icons webfont (via CDN)
 - **Offline-ready concept:** Key UI designed for low-bandwidth, cacheable content
 
----
-
-
-## 📸 Screenshots
-
-- **Desktop:** Open `index.html` in Chrome → right-click → Inspect → toggle device toolbar off → full-page screenshot
-- **Tablet:** In Chrome DevTools → select iPad Air or similar preset → screenshot
-- **Mobile:** In Chrome DevTools → select iPhone 12 or similar → screenshot
 
 ---
 
