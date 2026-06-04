@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MedReach SL – Healthcare Access for Every Community</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: #1a1a1a;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    .logo {
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #0F6E56;
+    }
+    .logo span { color: #1D9E75; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: #555; font-size: 14px; }
+    .nav-links a:hover { color: #0F6E56; }
+    .btn-nav {
+      background: #0F6E56 !important;
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      padding: 4rem 2rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #E1F5EE;
+
+
+      
+      color: #0F6E56;
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .hero h1 em { font-style: normal; color: #1D9E75; }
+    .hero p { color: #555; font-size: 16px; margin-bottom: 1.5rem; line-height: 1.7; }
+    .btn-primary {
+      display: inline-block;
+      background: #0F6E56;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      margin-right: 12px;
+    }
+    .btn-secondary {
+      display: inline-block;
+      border: 1px solid #ccc;
+      color: #333;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    /* HERO VISUAL MOCKUP */
+    .hero-visual {
+      background: #E1F5EE;
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .stats-row { display: flex; gap: 8px; }
+    .stat-mini {
+      flex: 1;
+      background: #fff;
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #d4ede4;
+    }
+    .stat-mini strong { display: block; font-size: 20px; font-weight: 600; color: #0F6E56; }
+    .stat-mini span { font-size: 11px; color: #666; }
+    .card-mock {
+      background: #fff;
+      border-radius: 10px;
+      padding: 14px;
+      border: 1px solid #d4ede4;
+    }
+    .card-mock-title { font-size: 12px; font-weight: 500; color: #0F6E56; margin-bottom: 4px; }
+    .card-mock-text { font-size: 13px; color: #444; }
+    .card-mock-row { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #1D9E75; flex-shrink: 0; }
+    .dot.amber { background: #EF9F27; }
+    .dot.red { background: #E24B4A; }
+    .card-mock-row span { font-size: 12px; color: #555; }
+
+    /* DIVIDER */
+    hr { border: none; border-top: 1px solid #e5e5e5; margin: 0 2rem; }
+
+    /* SECTIONS */
+    .section { padding: 3rem 2rem; max-width: 960px; margin: 0 auto; }
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: #1D9E75;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .section h2 { font-family: 'Fraunces', serif; font-size: 30px; font-weight: 700; margin-bottom: 0.75rem; }
+    .section > p { color: #555; font-size: 15px; margin-bottom: 2rem; }
+
+    /* FEATURES */
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1rem; }
+    .feature-card {
+      background: #f9f9f7;
+      border-radius: 12px;
+      padding: 1.25rem;
+      border: 1px solid #e5e5e5;
+    }
+    .feature-icon {
+      width: 38px; height: 38px;
+      background: #E1F5EE;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 12px;
+    }
+    .feature-icon i { color: #0F6E56; font-size: 20px; }
+    .feature-card h3 { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+    .feature-card p { font-size: 13px; color: #666; margin: 0; }
+
+    /* SDG SECTION */
+    .sdg-section { background: #E1F5EE; padding: 3.5rem 2rem; }
+    .sdg-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .sdg-badge {
+      display: inline-block;
+      background: #1D9E75;
+      color: #fff;
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+    .sdg-inner h2 { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 700; color: #085041; margin-bottom: 0.75rem; }
+    .sdg-inner > div > p { color: #0F6E56; font-size: 14px; }
+    .sdg-goals { display: flex; flex-direction: column; gap: 10px; }
+    .sdg-goal {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #fff;
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+    .sdg-num {
+      background: #1D9E75;
+      color: #fff;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 10px;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+    .sdg-goal p { font-size: 13px; color: #085041; margin: 0; line-height: 1.5; }
+
+    /* HOW IT WORKS */
+    .how-section { padding: 3rem 2rem; max-width: 960px; margin: 0 auto; }
+    .how-section h2 { font-family: 'Fraunces', serif; font-size: 30px; font-weight: 700; margin-bottom: 0.5rem; }
+    .how-section > p { color: #666; font-size: 15px; margin-bottom: 1.5rem; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+    .step { text-align: center; padding: 1.5rem 1rem; }
+    .step-num {
+      width: 42px; height: 42px;
+      background: #E1F5EE;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 12px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #0F6E56;
+    }
+    .step h4 { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+    .step p { font-size: 13px; color: #666; }
+
+    /* CTA */
+    .cta-section { background: #085041; padding: 4rem 2rem; text-align: center; }
+    .cta-section h2 { font-family: 'Fraunces', serif; font-size: 30px; font-weight: 700; color: #9FE1CB; margin-bottom: 0.75rem; }
+    .cta-section p { color: #5DCAA5; font-size: 15px; margin-bottom: 2rem; }
+    .btn-cta {
+      display: inline-block;
+      background: #1D9E75;
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 1.5rem 2rem;
+      border-top: 1px solid #e5e5e5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer p { font-size: 12px; color: #888; }
+    .footer-links { display: flex; gap: 1.25rem; }
+    .footer-links a { font-size: 12px; color: #888; text-decoration: none; }
+    .footer-links a:hover { color: #0F6E56; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.25rem; }
+      .hero h1 { font-size: 30px; }
+      .sdg-inner { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .steps { grid-template-columns: 1fr; }
+      .features { grid-template-columns: 1fr; }
+      .stats-row { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Med<span>Reach</span> SL</div>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#sdg">SDG Alignment</a></li>
+      <li><a href="#" class="btn-nav">Get Access</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <div class="hero-badge">
+        <i class="ti ti-heart-handshake"></i> Digital Public Good · Sierra Leone
+      </div>
+      <h1>Healthcare <em>access</em><br>for every community</h1>
+      <p>
+        MedReach SL connects rural Sierra Leoneans to nearby clinics, medicine availability,
+        and community health workers — on any device, on low bandwidth.
+      </p>
+      <a href="#" class="btn-primary">Explore the platform</a>
+      <a href="#how" class="btn-secondary">Learn more</a>
+    </div>
+    <div class="hero-visual">
+      <div class="stats-row">
+        <div class="stat-mini"><strong>4.2M</strong><span>rural users targeted</span></div>
+        <div class="stat-mini"><strong>SDG 3</strong><span>aligned</span></div>
+        <div class="stat-mini"><strong>Free</strong><span>open access</span></div>
+      </div>
+      <div class="card-mock">
+        <div class="card-mock-title"><i class="ti ti-map-pin"></i> Nearest clinic</div>
+        <div class="card-mock-text">Bo Government Hospital · 2.4 km away</div>
+        <div class="card-mock-row"><div class="dot"></div><span>Malaria medicine: available</span></div>
+        <div class="card-mock-row"><div class="dot amber"></div><span>ARVs: limited stock</span></div>
+        <div class="card-mock-row"><div class="dot red"></div><span>TB drugs: out of stock</span></div>
+      </div>
+      <div class="card-mock">
+        <div class="card-mock-title"><i class="ti ti-user-check"></i> Your Community Health Worker</div>
+        <div class="card-mock-text">Fatu Koroma · Available today · Bo District</div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <section class="section" id="features">
+    <div class="section-label">Core features</div>
+    <h2>Built for real conditions in Sierra Leone</h2>
+    <p>Designed to work on 2G networks, feature phones, and shared devices across urban and rural areas.</p>
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ti ti-map-pin"></i></div>
+        <h3>Clinic locator</h3>
+        <p>Find the nearest government and NGO health facilities with live distance information.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ti ti-pill"></i></div>
+        <h3>Medicine availability</h3>
+        <p>Real-time stock status for essential medicines at local clinics and health posts.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ti ti-users"></i></div>
+        <h3>CHW directory</h3>
+        <p>Connect with verified community health workers serving your district.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ti ti-device-mobile"></i></div>
+        <h3>Works offline</h3>
+        <p>Core features function without internet — critical data is cached locally on your device.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sdg-section" id="sdg">
+    <div class="sdg-inner">
+      <div>
+        <div class="sdg-badge">SDG Alignment</div>
+        <h2>A digital public good for a healthier Sierra Leone</h2>
+        <p>MedReach SL directly supports three United Nations Sustainable Development Goals, with SDG 3 at its core.</p>
+      </div>
+      <div class="sdg-goals">
+        <div class="sdg-goal">
+          <span class="sdg-num">SDG 3</span>
+          <p>Good Health &amp; Well-Being — bridging the gap between patients and care providers in underserved areas.</p>
+        </div>
+        <div class="sdg-goal">
+          <span class="sdg-num">SDG 10</span>
+          <p>Reduced Inequalities — ensuring rural and urban populations have equal access to health information.</p>
+        </div>
+        <div class="sdg-goal">
+          <span class="sdg-num">SDG 17</span>
+          <p>Partnerships for the Goals — built with open data shared across government, NGOs, and communities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-section" id="how">
+    <div class="section-label">How it works</div>
+    <h2>Simple. Fast. Accessible.</h2>
+    <p>Three steps to getting the healthcare help you need.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Enter your location</h4>
+        <p>Type your district or allow location access on your device.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Browse clinics &amp; medicines</h4>
+        <p>See what's nearby, what's in stock, and who can help.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Connect with a CHW</h4>
+        <p>Reach a verified health worker in your district for personalised guidance.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>Get care</h4>
+        <p>Visit the right clinic at the right time with the right information.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Bringing healthcare closer to home</h2>
+    <p>Join thousands of Sierra Leoneans already using MedReach SL to access better healthcare.</p>
+    <a href="#" class="btn-cta">Get started — it's free</a>
+  </section>
+
+  <footer>
+    <p>© 2026 MedReach SL · A Digital Public Good · Freetown, Sierra Leone</p>
+    <div class="footer-links">
+      <a href="#">GitHub</a>
+      <a href="#">Privacy</a>
+      <a href="#">Contact</a>
+    </div>
+  </footer>
+
+</body>
+</html>
